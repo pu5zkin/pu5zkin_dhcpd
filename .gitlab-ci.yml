@@ -21,7 +21,7 @@ unit:
 
 functional:
   stage: test
-  image: centos-7
+  image: dokken/centos-7
   script:
     - echo "Functional test"
     - kitchen test -d always -c 3
