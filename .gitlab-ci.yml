@@ -1,4 +1,4 @@
-image: centos:7
+image: chef/chef
 
 stages:
   - test
@@ -18,7 +18,6 @@ unit:
 functional:
   stage: test
   before_script:
-    - yum install dhcp
     - curl -k https://omnitruck.chef.io/install.sh;sh install.sh
   script:
     - echo "Functional test"
