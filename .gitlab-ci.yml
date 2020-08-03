@@ -1,11 +1,28 @@
+image: centos:7
+
 stages:
   - test
   - build
   - deploy
 
-test:
+linter:
   stage: test
-  script: echo "Running tests"
+  script: 
+    - delivery local lint
+
+unit:
+  stage: test
+  script:
+    - delivery local unit
+
+functional:
+  stage: test
+  before_script:
+    - yum install dhcp
+    - curl -k https://omnitruck.chef.io/install.sh;sh install.sh
+  script:
+    - echo "Functional test"
+    - kitchen test -d always -c 3
 
 build:
   stage: build

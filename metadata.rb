@@ -1,6 +1,6 @@
 name 'pu5zkin_dhcpd'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'pu5zkin'
+maintainer_email 'stanislaw.kuich@gmail.com'
 license 'All Rights Reserved'
 description 'Installs/Configures pu5zkin_dhcpd'
 version '0.1.0'
