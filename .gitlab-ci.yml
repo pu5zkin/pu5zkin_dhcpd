@@ -1,12 +1,16 @@
 image: chef/chefdk
 
+variables:
+  CHEF_LICENSE: "accept"
+
 stages:
+  - verify
   - test
   - build
   - deploy
 
 linter:
-  stage: test
+  stage: verify
   script: 
     - delivery local lint
 
@@ -17,8 +21,6 @@ unit:
 
 functional:
   stage: test
-  before_script:
-    - curl -k https://omnitruck.chef.io/install.sh;sh install.sh
   script:
     - echo "Functional test"
     - kitchen test -d always -c 3
@@ -26,3 +28,8 @@ functional:
 build:
   stage: build
   script: echo "Building the app"
+
+deploy:
+  stage: deploy
+  script: echo "Deploying the app"
+  when: manual
