@@ -13,9 +13,9 @@ verifier:
   name: inspec
 
 platforms:
-- name: centos-7
+- name: chefdk
   driver:
-    image: dokken/centos-7
+    image: chef/chefdk
 
 suites:
   - name: default
