@@ -27,12 +27,12 @@ integration:
 build:
   stage: build
   before_script:
-    - git config --global user.email "you@examplec.om"
-    - git config --global user.name "You Name"
+    - git config --global user.email "you@example.com"
+    - git config --global user.name "pu5zkin_bot"
   script:
     - echo "Building configuration..."
     - git tag -a "v1.0.0" -m "new version"
-    - git push --tags HEAD:$CI_COMMIT_REF_NAME
+    - git push --tags https://pu5zkin_bot:${CI_GIT_TOKEN}@gitlab.com/stanislaw.kuich/pu5zkin_dhcpd.git
 
 
 deploy:
