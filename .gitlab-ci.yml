@@ -27,8 +27,8 @@ integration:
 build:
   stage: build
   before_script:
-    - git config user.mail "you@examplec.om"
-    - git config user.name "You"
+    - git --global config user.mail "you@examplec.om"
+    - git --global config user.name "You Name"
   script:
     - echo "Building configuration..."
     - git tag -a "v1.0.0"
