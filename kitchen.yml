@@ -1,23 +1,22 @@
 ---
 driver:
-  name: dokken
-  chef_version: latest
-
-transport:
-  name: dokken
+  name: vagrant
+  provider: libvirt
+  network:
+   - ["private_network", {ip: "192.168.30.1"}]
 
 provisioner:
-  name: dokken
+  name: chef_zero
 
 verifier:
   name: inspec
 
 platforms:
-- name: chefdk
-  driver:
-    image: chef/chefdk
+  - name: centos/7
 
 suites:
   - name: default
-    run_list:
-    - recipe[pu5zkin_dhcpd::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:

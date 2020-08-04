@@ -22,8 +22,7 @@ unit:
 functional:
   stage: test
   script:
-    - echo "Functional test"
-    - kitchen test -d always -c 3
+    - echo "Functional test - look at kitchen.yml"
 
 build:
   stage: build

@@ -9,6 +9,19 @@ unless os.windows?
   end
 end
 
-describe port(67), :skip do
-  it { should_not be_listening }
+describe file('/etc/dhcp/dhcpd.conf') do
+  its('type') { should eq :file }
+  its('owner') { should eq 'root' }
+  its('group') { should eq 'root' }
+  its('mode') { should cmp '0644' }
+end
+
+describe service('dhcpd') do
+  it { should be_enabled }
+  it { should be_running }
+  it { should be_installed }
+end
+
+describe port(67) do
+  it { should be_listening }
 end
