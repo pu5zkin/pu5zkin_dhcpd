@@ -31,7 +31,7 @@ build:
     - git config --global user.name "You Name"
   script:
     - echo "Building configuration..."
-    - git tag -a "v1.0.0"
+    - git tag -a "v1.0.0" -m "new version"
 
 
 deploy:
