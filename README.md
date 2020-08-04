@@ -1,4 +1,4 @@
 # pu5zkin_dhcpd
 
-TODO: Enter the cookbook description here.
+This chef cookbook generate configuration for simply DHCP server. Enjoy !
 

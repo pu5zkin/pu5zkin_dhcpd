@@ -6,6 +6,7 @@ variables:
 stages:
   - verify
   - tests
+  - build
   - deploy
 
 linter:
@@ -22,6 +23,11 @@ integration:
   stage: tests
   script:
     - echo "Integrational test - look at kitchen.yml"
+
+build:
+  stage: build
+  script:
+    - echo "Building configuration..."
 
 
 deploy:
