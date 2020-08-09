@@ -22,7 +22,8 @@ unit:
 integration:
   stage: tests
   script:
-    - echo "Integrational test - look at kitchen.yml"
+    - kitchen verify default-centos-7 --destroy=always
+
 
 build:
   stage: build
